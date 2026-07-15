@@ -21,7 +21,7 @@
   position: relative;
   width: 100%;
   height: 100vh; /* Ekranı tam kaplaması için */
-  background-image: url('/hero-marble.jpg');
+  background-image: url('/photos/hero-marble.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
