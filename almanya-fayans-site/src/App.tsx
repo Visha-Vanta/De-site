@@ -292,11 +292,10 @@ function App() {
       {/* Header (Navbar) - State aktarıldı */}
       <Header lang={lang} setLang={setLang} t={t} />
 
-      {/* Hero Section */}
+      {/* Hero Section - Temiz mermer arka plan */}
       <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-stone-900/90 via-zinc-900/95 to-stone-800/90"></div>
-        <div className="absolute inset-0 bg-[url('/hero-marble.jpg')] opacity-10 bg-cover bg-center"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-amber-500/5 via-stone-500/10 to-amber-600/5 blur-3xl"></div>
+        {/* Mobile (hero-mobile.jpg) ve Tablet/PC (hero-marble.jpg) için net arka plan */}
+        <div className="absolute inset-0 bg-[url('/photos/hero-mobile.jpg')] md:bg-[url('/photos/hero-marble.jpg')] bg-cover bg-center bg-no-repeat"></div>
 
         <div className="relative z-10 max-w-4xl mx-auto text-center pt-20">
           <h1 className="text-6xl md:text-7xl lg:text-8xl font-serif font-bold bg-gradient-to-r from-amber-400 via-stone-300 to-amber-400 bg-clip-text text-transparent mb-8">
