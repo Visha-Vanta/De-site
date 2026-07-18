@@ -6,7 +6,7 @@
 
 ### 1. src/App.tsx
 **Header (Navbar):**
-- Sol tarafta: `EdoFliesen` marka adı
+- Sol tarafta: `/assets/edo3.png` logo (h-10 w-auto, mix-blend-lighten)
 - Sağ tarafta: `DE | EN | TR` dil seçici butonları + `Kostenloses Angebot` butonu
 
 **Hero bölümü (Tam ekran):**
@@ -48,7 +48,13 @@
 - Çalışma saatleri: "Mo-Fr: 08:00 - 18:00" / "Mon-Fri: 08:00 - 18:00" / "Pzt-Cum: 08:00 - 18:00"
 - E-posta: info@edofliesen.de
 
-### 2. src/index.css
+**Footer:**
+- `/assets/edo4.png` logo (h-16 w-auto, mix-blend-lighten) iletişim bölümünün hemen altında
+
+### 2. index.html
+- Favicon: `/assets/edo3.png` (image/png) olarak güncellendi
+- Google Fonts: Inter ve Playfair Display eklendi
+- Başlık: "EdoFliesen | Premium Naturstein & Marmor Verlegung"
 - Koyu antrasit (`bg-zinc-950`) tema renkleri
 - Font ayarları: **serif** (Playfair Display) başlıklar için, **sans-serif** (Inter) gövde metinleri için
 
