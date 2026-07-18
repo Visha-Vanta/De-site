@@ -11,7 +11,7 @@ const translations = {
     },
     hero: {
       title: "Präzision, die man spürt.",
-      subtitle: "EdoFliesen - Hochwertige Naturstein und Marmor Verlegung mit über 18 Jahren Erfahrung",
+      subtitle: "EdoFliesen - Hochwertige Naturstein und Marmor Verlegung mit über 22 Jahren Erfahrung",
       stats: {
         exp: "Jahre Erfahrung",
         proj: "Abgeschlossene Projekte",
@@ -70,7 +70,7 @@ const translations = {
     },
     hero: {
       title: "Precision you can feel.",
-      subtitle: "EdoFliesen - Premium natural stone and marble installation with over 18 years of experience",
+      subtitle: "EdoFliesen - Premium natural stone and marble installation with over 22 years of experience",
       stats: {
         exp: "Years Experience",
         proj: "Completed Projects",
@@ -129,7 +129,7 @@ const translations = {
     },
     hero: {
       title: "Hissedilen Hassasiyet.",
-      subtitle: "EdoFliesen - 18 yılı aşkın tecrübe ile birinci sınıf doğal taş ve mermer döşeme",
+      subtitle: "EdoFliesen - 22 yılı aşkın tecrübe ile birinci sınıf doğal taş ve mermer döşeme",
       stats: {
         exp: "Yıllık Tecrübe",
         proj: "Tamamlanan Proje",
@@ -233,7 +233,10 @@ function Header({ lang, setLang, t }: { lang: Language; setLang: (l: Language) =
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-zinc-950/80 backdrop-blur-md border-b border-stone-700/30">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <img src="/assets/edo3.png" alt="EdoFliesen" className="h-10 w-auto mix-blend-lighten" />
+        <div className="flex items-center gap-3">
+          <img src="/assets/edo2-favicon.png" alt="EdoFliesen" className="h-10 w-auto" />
+          <span className="text-xl font-semibold text-white">EdoFliesen</span>
+        </div>
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-1 text-stone-300 font-sans text-sm">
             {(['de', 'en', 'tr'] as Language[]).map((l, idx) => (
@@ -250,10 +253,10 @@ function Header({ lang, setLang, t }: { lang: Language; setLang: (l: Language) =
               </span>
             ))}
           </div>
-          <button className="flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-stone-950 font-serif font-bold px-5 py-2 rounded-xl transition-all duration-300 shadow-lg shadow-amber-500/20 text-sm">
+          <a href="#contact" className="flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-stone-950 font-serif font-bold px-5 py-2 rounded-xl transition-all duration-300 shadow-lg shadow-amber-500/20 text-sm">
             <Globe className="w-4 h-4" />
             {t.nav.offer}
-          </button>
+          </a>
         </div>
       </div>
     </header>
@@ -311,7 +314,7 @@ function App() {
             <div className="bg-gradient-to-br from-amber-500/10 to-amber-600/20 border border-amber-500/30 rounded-2xl px-8 py-6 backdrop-blur-sm">
               <div className="flex items-center justify-center gap-3 mb-2">
                 <Award className="w-8 h-8 text-amber-400" />
-                <span className="text-4xl font-serif font-bold text-amber-300">18+</span>
+                <span className="text-4xl font-serif font-bold text-amber-300">22+</span>
               </div>
               <p className="text-stone-400 font-sans">{t.hero.stats.exp}</p>
             </div>
@@ -415,7 +418,7 @@ function App() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 px-4 bg-stone-950/40">
+      <section id="contact" className="py-20 px-4 bg-stone-950/40">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-serif font-bold text-amber-300 mb-4 text-center">{t.contact.title}</h2>
           <p className="text-stone-300/70 font-sans text-center mb-12">
