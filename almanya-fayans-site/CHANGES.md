@@ -52,13 +52,9 @@
 - `/assets/edo4.png` logo (h-16 w-auto, mix-blend-lighten) iletişim bölümünün hemen altında
 
 ### 2. index.html
-- Favicon: `/assets/edo3.png` (image/png) olarak güncellendi
+- Favicon: `/assets/edo-favicon.png` (image/png, şeffaf arka plan) olarak güncellendi
 - Google Fonts: Inter ve Playfair Display eklendi
 - Başlık: "EdoFliesen | Premium Naturstein & Marmor Verlegung"
-- Koyu antrasit (`bg-zinc-950`) tema renkleri
-- Font ayarları: **serif** (Playfair Display) başlıklar için, **sans-serif** (Inter) gövde metinleri için
-
-### 3. index.html
 - Google Fonts: Inter ve Playfair Display eklendi
 - Başlık: "EdoFliesen | Premium Naturstein & Marmor Verlegung"
 
