@@ -32,7 +32,7 @@ const translations = {
       cards: [
         { title: "Großformat-Fliesen", desc: "Präziser Zuschnitt und Verlegung für großformatige Fliesen mit nahtloser Optik." },
         { title: "Naturstein & Marmor", desc: "Hochwertige Naturstein- und Marmorverlegung mit meisterhafter Handwerkskunst." },
-        { title: "Bodenheizung", desc: "Effiziente Fußbodenheizungssysteme, perfekt integriert in Ihre Fliesen." },
+        { title: "Terrassen & Balkone", desc: "Professionelle Ausführung von Terrassen- und Balkondielen für mehr Lebensqualität." },
         { title: "Wasserdichte Systeme", desc: "Abdichtungslösungen für langlebige Sicherheit in Nassbereichen." }
       ]
     },
@@ -48,18 +48,18 @@ const translations = {
       phone: "Telefon",
       email: "E-Mail",
       hours: "Öffnungszeiten",
-      hoursText1: "Mo-Fr: 8:00-18:00 Uhr",
-      hoursText2: "Sa: Nach Termin",
+      hoursText1: "Mo-Fr: 08:00 - 18:00",
+      hoursText2: "Sa: Nach Vereinbarung",
       form: {
-        nameLabel: "Name *",
-        namePlace: "Ihr vollständiger Name",
-        emailLabel: "E-Mail *",
-        emailPlace: "Ihre E-Mail Adresse",
+        nameLabel: "Ihr Name",
+        namePlace: "Vor- und Nachname",
+        emailLabel: "Ihre E-Mail",
+        emailPlace: "E-Mail Adresse",
         phoneLabel: "Telefon",
         phonePlace: "+49 ...",
-        msgLabel: "Anfrage",
-        msgPlace: "Ihr Anliegen oder Projektbeschreibung...",
-        btn: "Nachricht senden"
+        msgLabel: "Nachricht",
+        msgPlace: "Ihre Nachricht oder Projektbeschreibung...",
+        btn: "Senden"
       }
     },
     footer: "© 2026 EdoFliesen • Alle Rechte vorbehalten"
@@ -91,7 +91,7 @@ const translations = {
       cards: [
         { title: "Large Format Tiles", desc: "Precision cutting and installation for large-format tiles with seamless finishes." },
         { title: "Natural Stone & Marble", desc: "Premium natural stone and marble installation with expert craftsmanship." },
-        { title: "Underfloor Heating", desc: "Efficient underfloor heating systems integrated with tile installations." },
+        { title: "Terraces & Balconies", desc: "Professional terrace and balcony installations for enhanced living quality." },
         { title: "Waterproofing Systems", desc: "Waterproofing solutions ensuring long-lasting durability and protection." }
       ]
     },
@@ -107,18 +107,18 @@ const translations = {
       phone: "Phone",
       email: "Email",
       hours: "Opening Hours",
-      hoursText1: "Mon-Fri: 8:00 AM - 6:00 PM",
+      hoursText1: "Mon-Fri: 08:00 - 18:00",
       hoursText2: "Sat: By Appointment",
       form: {
-        nameLabel: "Name *",
-        namePlace: "Your Full Name",
-        emailLabel: "Email *",
-        emailPlace: "Your Email Address",
+        nameLabel: "Your Name",
+        namePlace: "First and Last Name",
+        emailLabel: "Your Email",
+        emailPlace: "Email Address",
         phoneLabel: "Phone",
         phonePlace: "+49 ...",
-        msgLabel: "Inquiry",
-        msgPlace: "Your request or project description...",
-        btn: "Send Message"
+        msgLabel: "Message",
+        msgPlace: "Your message or project description...",
+        btn: "Send"
       }
     },
     footer: "© 2026 EdoFliesen • All rights reserved"
@@ -150,7 +150,7 @@ const translations = {
       cards: [
         { title: "Büyük Ebatlı Fayans", desc: "Kusursuz görünüm için büyük ebatlı fayansların hassas kesimi ve döşenmesi." },
         { title: "Doğal Taş & Mermer", desc: "Usta işçilikle birinci sınıf doğal taş ve mermer uygulamaları." },
-        { title: "Yerden Isıtma", desc: "Fayanslarınıza mükemmel entegre edilmiş verimli yerden ısıtma sistemleri." },
+        { title: "Teras & Balkon", desc: "Teras ve balkon döşemeleriyle yaşam kalitesini artıran profesyonel uygulamalar." },
         { title: "Su Yalıtım Sistemleri", desc: "Islak zeminlerde uzun ömürlü dayanıklılık ve koruma sağlayan yalıtım çözümleri." }
       ]
     },
@@ -169,15 +169,15 @@ const translations = {
       hoursText1: "Pzt-Cum: 08:00 - 18:00",
       hoursText2: "Cmt: Randevu ile",
       form: {
-        nameLabel: "İsim *",
-        namePlace: "Adınız Soyadınız",
-        emailLabel: "E-posta *",
-        emailPlace: "E-posta Adresiniz",
+        nameLabel: "Adınız Soyadınız",
+        namePlace: "Adınız ve soyadınız",
+        emailLabel: "E-posta",
+        emailPlace: "E-posta adresiniz",
         phoneLabel: "Telefon",
         phonePlace: "+49 ...",
-        msgLabel: "Talebiniz",
-        msgPlace: "Proje detayları veya mesajınız...",
-        btn: "Mesaj Gönder"
+        msgLabel: "Mesajınız",
+        msgPlace: "Mesajınız veya proje detayları...",
+        btn: "Gönder"
       }
     },
     footer: "© 2026 EdoFliesen • Tüm hakları saklıdır"
@@ -292,16 +292,20 @@ function App() {
       {/* Header (Navbar) - State aktarıldı */}
       <Header lang={lang} setLang={setLang} t={t} />
 
-      {/* Hero Section - Temiz mermer arka plan */}
+      {/* Hero Section - Responsive arka plan */}
       <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden">
-        {/* Mobile (hero-mobile.jpg) ve Tablet/PC (hero-marble.jpg) için net arka plan */}
-        <div className="absolute inset-0 bg-[url('/photos/hero-mobile.jpg')] md:bg-[url('/photos/hero-marble.jpg')] bg-cover bg-center bg-no-repeat"></div>
+        {/* Mobil arka plan (hero-mobile.jpg) */}
+        <div className="absolute inset-0 bg-[url('/photos/hero-mobile.jpg')] bg-cover bg-center bg-no-repeat md:hidden"></div>
+        {/* Tablet/PC arka plan (hero-marble.jpg) */}
+        <div className="absolute inset-0 bg-[url('/photos/hero-marble.jpg')] bg-cover bg-center bg-no-repeat hidden md:block"></div>
+        {/* Koyulaştırıcı overlay - yazı okunabilirliği için */}
+        <div className="absolute inset-0 bg-zinc-950/70"></div>
 
         <div className="relative z-10 max-w-4xl mx-auto text-center pt-20">
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-serif font-bold bg-gradient-to-r from-amber-400 via-stone-300 to-amber-400 bg-clip-text text-transparent mb-8">
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-serif font-bold bg-gradient-to-r from-amber-400 via-stone-300 to-amber-400 bg-clip-text text-transparent mb-8" style={{textShadow: '2px 2px 8px rgba(0,0,0,0.8)'}}>
             {t.hero.title}
           </h1>
-          <p className="text-xl md:text-2xl text-stone-300/80 max-w-2xl mx-auto mb-12 font-sans">
+          <p className="text-xl md:text-2xl text-stone-300 max-w-2xl mx-auto mb-12 font-sans" style={{textShadow: '1px 1px 6px rgba(0,0,0,0.7)'}}>
             {t.hero.subtitle}
           </p>
 

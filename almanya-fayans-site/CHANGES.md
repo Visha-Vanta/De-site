@@ -1,6 +1,6 @@
 # EdoFliesen Tasarım Güncelleme
 
-## Tarih: 2026-07-15
+## Tarih: 2026-07-18
 
 ## Güncellenen Dosyalar
 
@@ -11,9 +11,14 @@
 
 **Hero bölümü (Tam ekran):**
 - `min-h-screen` ile tam ekran
-- Koyu mermer görsel efekti arka plan
+- **Responsive arka plan:** Mobile'da `hero-mobile.jpg`, Tablet/PC'de `hero-marble.jpg`
+- **Koyulaştırıcı overlay:** `bg-zinc-950/70` (daha net okunabilirlik için)
+- **Metin gölgeleri:** H1 için `text-shadow: 2px 2px 8px rgba(0,0,0,0.8)`, P için `text-shadow: 1px 1px 6px rgba(0,0,0,0.7)`
 - Başlık: "Präzision, die man spürt." (nokta ile)
 - Alt başlık: "EdoFliesen - Hochwertige Naturstein und Marmor Verlegung mit über 18 Jahren Erfahrung"
+
+### src/App.css
+- Artık kullanılmayan `.hero` sınıfları ve media queryler kaldırıldı (temiz kod için)
 
 **İstatistik kutuları (3 adet):**
 - `18+ Jahre Erfahrung` - Award ikonu ile
@@ -29,17 +34,19 @@
 **Hizmet kartları ("Handwerk mit System" başlığı altında, 4 kart):**
 - `Großformat-Fliesen` - Büyük format fayanslar
 - `Naturstein & Marmor` - Doğal taş ve mermer
-- `Bodenheizung` - Zemin ısıtma sistemleri
+- `Terrassen & Balkone` - **Yeni: Teras ve balkon döşemeleri** (Bodenheizung kartı kaldırıldı)
 - `Wasserdichte Systeme` - Su geçirmezlik sistemleri
 
 **Markus König alıntısı:**
 - "Qualität ist kein Zufall, sondern das Ergebnis bewährter Technik und Leidenschaft für das Material."
 - "— Markus König, Gründer & Master Fliesenleger"
 
-**Almanca iletişim formu:**
-- Name, E-Mail, Telefon, Anfrage (mesaj) alanları
-- "Nachricht senden" gönder butonu
-- E-posta: info@edofliesen.de (güncellendi)
+**İletişim formu (Çok dilli):**
+- **Almanca (de):** "Ihr Name", "Ihre E-Mail", "Nachricht", "Senden" butonu
+- **İngilizce (en):** "Your Name", "Your Email", "Message", "Send" button
+- **Türkçe (tr):** "Adınız Soyadınız", "E-posta", "Mesajınız", "Gönder" butonu
+- Çalışma saatleri: "Mo-Fr: 08:00 - 18:00" / "Mon-Fri: 08:00 - 18:00" / "Pzt-Cum: 08:00 - 18:00"
+- E-posta: info@edofliesen.de
 
 ### 2. src/index.css
 - Koyu antrasit (`bg-zinc-950`) tema renkleri
