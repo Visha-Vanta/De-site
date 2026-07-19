@@ -57,6 +57,9 @@ const translations = {
         emailPlace: "E-Mail Adresse",
         phoneLabel: "Telefon",
         phonePlace: "+49 ...",
+        serviceLabel: "Gewünschte Leistung",
+        servicePlace: "Bitte auswählen...",
+        serviceOptions: ["Großformat-Fliesen", "Naturstein & Marmor", "Terrassen & Balkone", "Wasserdichte Systeme", "Komplettsanierung / Sonstiges"],
         msgLabel: "Nachricht",
         msgPlace: "Ihre Nachricht oder Projektbeschreibung...",
         btn: "Senden"
@@ -116,6 +119,9 @@ const translations = {
         emailPlace: "Email Address",
         phoneLabel: "Phone",
         phonePlace: "+49 ...",
+        serviceLabel: "Desired Service",
+        servicePlace: "Please select...",
+        serviceOptions: ["Large Format Tiles", "Natural Stone & Marble", "Terraces & Balconies", "Waterproofing Systems", "Complete Renovation / Other"],
         msgLabel: "Message",
         msgPlace: "Your message or project description...",
         btn: "Send"
@@ -175,6 +181,9 @@ const translations = {
         emailPlace: "E-posta adresiniz",
         phoneLabel: "Telefon",
         phonePlace: "+49 ...",
+        serviceLabel: "Talep Edilen Hizmet",
+        servicePlace: "Lütfen seçiniz...",
+        serviceOptions: ["Büyük Ebatlı Fayans", "Doğal Taş & Mermer", "Teras & Balkon", "Su Yalıtım Sistemleri", "Komplett Sanierung / Diğer"],
         msgLabel: "Mesajınız",
         msgPlace: "Mesajınız veya proje detayları...",
         btn: "Gönder"
@@ -282,9 +291,21 @@ function App() {
     service: ''
   })
 
+  const WHATSAPP_NUMBER = '+491711291791'
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
+    const { name, email, phone, message, service } = formData
+    const whatsappMetni = `Hallo EdoFliesen,%0A%0A
+Ich habe eine Anfrage über die Website:%0A
+- Name: ${name}%0A
+- Email: ${email}%0A
+- Telefon: ${phone || 'keine Angabe'}%0A
+- Leistung: ${service || 'keine Angabe'}%0A
+- Nachricht: ${message}%0A`
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER.replace(/\+/g,'')}?text=${encodeURIComponent(whatsappMetni)}`
+    window.open(whatsappUrl, '_blank')
+    setFormData({ name: '', email: '', phone: '', message: '', service: '' })
   }
 
   return (
@@ -512,6 +533,20 @@ function App() {
                     placeholder={t.contact.form.phonePlace}
                   />
                 </div>
+              </div>
+
+              <div>
+                <label className="block text-stone-300 font-sans mb-2">{t.contact.form.serviceLabel}</label>
+                <select
+                  value={formData.service}
+                  onChange={(e) => setFormData({...formData, service: e.target.value})}
+                  className="w-full px-4 py-3 bg-stone-800/50 border border-stone-600/50 rounded-xl text-stone-200 font-sans focus:border-amber-400/50 focus:outline-none transition-colors appearance-none"
+                >
+                  <option value="">{t.contact.form.servicePlace}</option>
+                  {t.contact.form.serviceOptions?.map((opt: string, idx: number) => (
+                    <option key={idx} value={opt}>{opt}</option>
+                  ))}
+                </select>
               </div>
 
               <div>

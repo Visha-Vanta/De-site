@@ -43,9 +43,11 @@
 - "— Markus König, Gründer & Master Fliesenleger"
 
 **İletişim formu (Çok dilli):**
-- **Almanca (de):** "Ihr Name", "Ihre E-Mail", "Nachricht", "Senden" butonu
-- **İngilizce (en):** "Your Name", "Your Email", "Message", "Send" button
-- **Türkçe (tr):** "Adınız Soyadınız", "E-posta", "Mesajınız", "Gönder" butonu
+- **Almanca (de):** "Ihr Name", "Ihre E-Mail", "Gewünschte Leistung" (dropdown), "Nachricht", "Senden" butonu
+- **İngilizce (en):** "Your Name", "Your Email", "Desired Service" (dropdown), "Message", "Send" button
+- **Türkçe (tr):** "Adınız Soyadınız", "E-posta", "Talep Edilen Hizmet" (dropdown), "Mesajınız", "Gönder" butonu
+- **WhatsApp entegrasyonu:** Form submit edildiğinde WhatsApp üzerinden gönderilir, form resetlenir
+- Numara: `+491711291791`
 - Çalışma saatleri: "Mo-Fr: 08:00 - 18:00" / "Mon-Fri: 08:00 - 18:00" / "Pzt-Cum: 08:00 - 18:00"
 - E-posta: info@edofliesen.de
 
