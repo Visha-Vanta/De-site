@@ -234,16 +234,16 @@ function Header({ lang, setLang, t }: { lang: Language; setLang: (l: Language) =
     <header className="fixed top-0 left-0 right-0 z-50 bg-zinc-950/80 backdrop-blur-md border-b border-stone-700/30">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         <div className="flex items-center gap-3">
-          <img src="/assets/edo2-favicon.png" alt="EdoFliesen" className="h-10 w-auto" />
-          <span className="text-xl font-semibold text-white">EdoFliesen</span>
+          <img src="/assets/edo2-favicon.png" alt="EdoFliesen" className="h-10 w-auto mix-blend-lighten" />
+          <span className="hidden sm:block text-xl font-semibold text-white">EdoFliesen</span>
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 sm:gap-4">
           <div className="flex items-center gap-1 text-stone-300 font-sans text-sm">
             {(['de', 'en', 'tr'] as Language[]).map((l, idx) => (
               <span key={l} className="flex items-center gap-1">
-                <button 
+                <button
                   onClick={() => setLang(l)}
-                  className={`px-3 py-1 rounded-lg transition-colors uppercase ${
+                  className={`px-2 sm:px-3 py-1 rounded-lg transition-colors uppercase ${
                     lang === l ? 'bg-stone-800/80 text-amber-400 font-bold' : 'hover:bg-stone-800/50'
                   }`}
                 >
@@ -253,9 +253,9 @@ function Header({ lang, setLang, t }: { lang: Language; setLang: (l: Language) =
               </span>
             ))}
           </div>
-          <a href="#contact" className="flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-stone-950 font-serif font-bold px-5 py-2 rounded-xl transition-all duration-300 shadow-lg shadow-amber-500/20 text-sm">
+          <a href="#contact" className="flex items-center gap-1 sm:gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-stone-950 font-serif font-bold px-3 sm:px-5 py-2 rounded-xl transition-all duration-300 shadow-lg shadow-amber-500/20 text-sm">
             <Globe className="w-4 h-4" />
-            {t.nav.offer}
+            <span className="hidden sm:inline">Kostenloses </span>Angebot
           </a>
         </div>
       </div>
@@ -540,10 +540,11 @@ function App() {
       {/* Footer */}
       <footer className="py-12 px-4 border-t border-stone-700/30">
         <div className="max-w-6xl mx-auto text-center">
-          <img src="/assets/edo4.png" alt="EdoFliesen" className="h-16 w-auto mx-auto mb-4 mix-blend-lighten" />
-          <p className="text-stone-400 font-sans">
+          <img src="/assets/edo4.png" alt="EdoFliesen" className="h-16 w-auto mx-auto mb-4" />
+          <p className="text-stone-400 font-sans mb-2">
             {t.footer}
           </p>
+          <p className="text-stone-500 font-sans text-sm">Inhaber: Ergin Dedeoğlu</p>
         </div>
       </footer>
     </div>

@@ -5,9 +5,10 @@
 ## Güncellenen Dosyalar
 
 ### 1. src/App.tsx
-**Header (Navbar):**
-- Sol tarafta: `/assets/edo3.png` logo (h-10 w-auto, mix-blend-lighten)
-- Sağ tarafta: `DE | EN | TR` dil seçici butonları + `Kostenloses Angebot` butonu
+**Header (Navbar)** - Responsive:
+- Sol tarafta: `/assets/edo2-favicon.png` logo (h-10, mix-blend-lighten) + `hidden sm:block` "EdoFliesen" metni
+- Sağ tarafta: `gap-2 sm:gap-4` ile düzenlenmiş, buton metni mobilde "Angebot", desktop'ta "Kostenloses Angebot"
+- Buton: `<a href="#contact">` smooth scroll ile iletişim formuna yönlendirme
 
 **Hero bölümü (Tam ekran):**
 - `min-h-screen` ile tam ekran
@@ -15,13 +16,13 @@
 - **Koyulaştırıcı overlay:** `bg-zinc-950/70` (daha net okunabilirlik için)
 - **Metin gölgeleri:** H1 için `text-shadow: 2px 2px 8px rgba(0,0,0,0.8)`, P için `text-shadow: 1px 1px 6px rgba(0,0,0,0.7)`
 - Başlık: "Präzision, die man spürt." (nokta ile)
-- Alt başlık: "EdoFliesen - Hochwertige Naturstein und Marmor Verlegung mit über 18 Jahren Erfahrung"
+- Alt başlık: "EdoFliesen - Hochwertige Naturstein und Marmor Verlegung mit über 22 Jahren Erfahrung" (18 → 22 yıl)
 
 ### src/App.css
 - Artık kullanılmayan `.hero` sınıfları ve media queryler kaldırıldı (temiz kod için)
 
 **İstatistik kutuları (3 adet):**
-- `18+ Jahre Erfahrung` - Award ikonu ile
+- `22+ Jahre Erfahrung` - Award ikonu ile (18 → 22 yıl)
 - `420+ Abgeschlossene Projekte` - Users ikonu ile  
 - `100% Kundenzufriedenheit` - Shield ikonu ile
 
@@ -49,12 +50,10 @@
 - E-posta: info@edofliesen.de
 
 **Footer:**
-- `/assets/edo4.png` logo (h-16 w-auto, mix-blend-lighten) iletişim bölümünün hemen altında
+- `/assets/edo4.png` logo (h-16 w-auto) logo ve "Inhaber: Ergin Dedeoğlu" metni
 
 ### 2. index.html
 - Favicon: `/assets/edo-favicon.png` (image/png, şeffaf arka plan) olarak güncellendi
-- Google Fonts: Inter ve Playfair Display eklendi
-- Başlık: "EdoFliesen | Premium Naturstein & Marmor Verlegung"
 - Google Fonts: Inter ve Playfair Display eklendi
 - Başlık: "EdoFliesen | Premium Naturstein & Marmor Verlegung"
 
