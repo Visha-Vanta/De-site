@@ -311,7 +311,7 @@ Ich habe eine Anfrage über die Website:%0A
     <div className="min-h-screen bg-gradient-to-br from-zinc-950 via-stone-900/40 to-zinc-900 text-gray-200">
       
       {/* Header (Navbar) - State aktarıldı */}
-      <Header lang={lang} setLang={setLang} t={t} />
+    <Header lang={lang} setLang={setLang} />
 
       {/* Hero Section - Responsive arka plan */}
       <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden">
