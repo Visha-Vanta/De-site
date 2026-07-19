@@ -238,7 +238,7 @@ function VideoPlayer({ src, title }: { src: string; title: string }) {
   )
 }
 
-function Header({ lang, setLang, t }: { lang: Language; setLang: (l: Language) => void; t: any }) {
+function Header({ lang, setLang, t }: { lang: Language; setLang: (l: Language) => void;: any }) {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-zinc-950/80 backdrop-blur-md border-b border-stone-700/30">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
