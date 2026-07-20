@@ -242,9 +242,10 @@ function Header({ lang, setLang }: { lang: Language; setLang: (l: Language) => v
     <header className="fixed top-0 left-0 right-0 z-50 bg-zinc-950/80 backdrop-blur-md border-b border-stone-700/30">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         <div className="flex items-center gap-3">
-          <img src="/assets/edo2-favicon.png" alt="EdoFliesen" className="h-10 w-auto mix-blend-lighten" />
-          <span className="hidden sm:block text-xl font-semibold text-white">EdoFliesen</span>
-        </div>
+          <img src="/assets/edo2-favicon.png" alt="EdoFliesen" className="w-12 h-12 object-contain rounded-md" />
+          <span className="text-2xl font-bold text-white">EdoFliesen
+          </span>
+      </div>
         <div className="flex items-center gap-2 sm:gap-4">
           <div className="flex items-center gap-1 text-stone-300 font-sans text-sm">
             {(['de', 'en', 'tr'] as Language[]).map((l, idx) => (
