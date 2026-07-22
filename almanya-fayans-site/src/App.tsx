@@ -595,7 +595,7 @@ function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       {children}
-      <CookieBanner />
+      <CookieBanner language={language} />
     </>
   )
 }
