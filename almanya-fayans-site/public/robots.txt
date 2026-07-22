@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://edofliesen.de/sitemap.xml
+
+# Almanya yasal gerekliliği
+# Diese Datei ist gesetzlich vorgeschrieben
