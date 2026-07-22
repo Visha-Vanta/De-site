@@ -225,18 +225,18 @@ function VideoPlayer({ src, title }: { src: string; title: string }) {
 function Header({ lang, setLang }: { lang: Language; setLang: (l: Language) => void }) {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-zinc-950/80 backdrop-blur-md border-b border-stone-700/30">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <div className="flex items-center gap-3">
-          <img src="/assets/edo2-favicon.png" alt="EdoFliesen" className="w-12 h-12 object-contain rounded-md" />
-          <span className="text-2xl font-bold text-white">EdoFliesen</span>
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 py-3 sm:py-4 flex flex-wrap items-center justify-between gap-y-2">
+        <div className="flex items-center gap-2 sm:gap-3">
+          <img src="/assets/edo2-favicon.png" alt="EdoFliesen" className="w-9 h-9 sm:w-12 sm:h-12 object-contain rounded-md" />
+          <span className="text-base sm:text-2xl font-bold text-white whitespace-nowrap">EdoFliesen</span>
         </div>
         <div className="flex items-center gap-2 sm:gap-4">
-          <div className="flex items-center gap-1 text-stone-300 font-sans text-sm">
+          <div className="flex items-center gap-0.5 sm:gap-1 text-stone-300 font-sans text-xs sm:text-sm">
             {(['de', 'en', 'tr'] as Language[]).map((l, idx) => (
-              <span key={l} className="flex items-center gap-1">
+              <span key={l} className="flex items-center gap-0.5 sm:gap-1">
                 <button
                   onClick={() => setLang(l)}
-                  className={`px-2 sm:px-3 py-1 rounded-lg transition-colors uppercase ${
+                  className={`px-1.5 sm:px-3 py-1 rounded-lg transition-colors uppercase ${
                     lang === l ? 'bg-stone-800/80 text-amber-400 font-bold' : 'hover:bg-stone-800/50'
                   }`}
                 >
@@ -246,8 +246,8 @@ function Header({ lang, setLang }: { lang: Language; setLang: (l: Language) => v
               </span>
             ))}
           </div>
-          <a href="#contact" className="flex items-center gap-1 sm:gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-stone-950 font-serif font-bold px-3 sm:px-5 py-2 rounded-xl transition-all duration-300 shadow-lg shadow-amber-500/20 text-sm">
-            <Globe className="w-4 h-4" />
+          <a href="#contact" className="flex items-center gap-1 sm:gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-stone-950 font-serif font-bold px-2.5 sm:px-5 py-1.5 sm:py-2 rounded-xl transition-all duration-300 shadow-lg shadow-amber-500/20 text-xs sm:text-sm whitespace-nowrap">
+            <Globe className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             <span className="hidden sm:inline">Kostenloses </span>Angebot
           </a>
         </div>
@@ -256,8 +256,7 @@ function Header({ lang, setLang }: { lang: Language; setLang: (l: Language) => v
   )
 }
 
-function HomePage() {
-  const [lang, setLang] = useState<Language>('de')
+function HomePage({ lang, setLang }: { lang: Language; setLang: (l: Language) => void }) {
   const t = translations[lang]
 
   const videos = [
@@ -591,7 +590,7 @@ Ich habe eine Anfrage über die Website:%0A
   )
 }
 
-function Layout({ children }: { children: React.ReactNode }) {
+function Layout({ children, language }: { children: React.ReactNode; language: Language }) {
   return (
     <>
       {children}
@@ -601,11 +600,12 @@ function Layout({ children }: { children: React.ReactNode }) {
 }
 
 function App() {
+  const [lang, setLang] = useState<Language>('de')
   return (
     <Routes>
-      <Route path="/" element={<Layout><HomePage /></Layout>} />
-      <Route path="/impressum" element={<Layout><Impressum /></Layout>} />
-      <Route path="/datenschutz" element={<Layout><Datenschutz /></Layout>} />
+      <Route path="/" element={<Layout language={lang}><HomePage lang={lang} setLang={setLang} /></Layout>} />
+      <Route path="/impressum" element={<Layout language={lang}><Impressum /></Layout>} />
+      <Route path="/datenschutz" element={<Layout language={lang}><Datenschutz /></Layout>} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   )
